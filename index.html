@@ -11,9 +11,97 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <link rel="preload" href="images/SeingSpa/logo.png" as="image">
-    <link rel="preload" href="video1.mp4" as="video">
+    
+    <!-- Precarga de imágenes críticas -->
+    <link rel="preload" href="images/Logo/logo.png" as="image" fetchpriority="high">
+    <link rel="preload" href="images/Logo/logo-blanco.png" as="image" fetchpriority="high">
+    <link rel="preload" href="video1.mp4" as="video" fetchpriority="high">
+    
+    <!-- Precarga de imágenes de la galería -->
+    <link rel="preload" href="images/SeingSpa/seingspa-2.jpeg" as="image">
+    <link rel="preload" href="images/SeingSpa/seingspa-3.jpeg" as="image">
+    <link rel="preload" href="images/SeingSpa/seingspa-5.jpeg" as="image">
+    
+    <!-- Estilos para optimización de imágenes -->
+    <style>
+        /* Estilos para lazy loading */
+        .lazy-image {
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+        
+        .lazy-image.loaded {
+            opacity: 1;
+        }
+        
+        /* Estilos para placeholder de imágenes */
+        .image-placeholder {
+            background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s linear infinite;
+        }
+        
+        @keyframes shimmer {
+            to {
+                background-position: -200% 0;
+            }
+        }
+        
+        /* Estilos para optimización de lightbox */
+        .lightbox-image {
+            will-change: transform;
+            transform: translateZ(0);
+            backface-visibility: hidden;
+        }
+    </style>
+    
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .controls-container {
+            transition: opacity 0.3s ease;
+        }
+
+        .controls-container.fullscreen-controls {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 9999;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            padding: 20px;
+        }
+
+        .controls-container.fullscreen-controls:hover {
+            opacity: 1 !important;
+        }
+
+        #progress-bar {
+            height: 4px;
+            transition: height 0.2s ease;
+        }
+
+        .controls-container:hover #progress-bar {
+            height: 6px;
+        }
+
+        #progress-handle {
+            width: 12px;
+            height: 12px;
+            transition: transform 0.2s ease;
+        }
+
+        .controls-container:hover #progress-handle {
+            transform: translate(-50%, -50%) scale(1.2);
+        }
+
+        .controls-container button {
+            transition: transform 0.2s ease;
+        }
+
+        .controls-container button:hover {
+            transform: scale(1.1);
+        }
+    </style>
 </head>
 
 <body class="bg-gray-50 font-sans antialiased">
@@ -58,44 +146,50 @@
                     <div class="w-full lg:w-2/3 relative" data-aos="fade-left">
                         <div class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-blue-900 transform scale-100">
                             <div class="absolute inset-0 bg-gradient-to-r from-blue-900/20 to-transparent z-10"></div>
-                            <video
-                                id="hero-video"
-                                class="w-full h-[500px] object-cover"
-                                playsinline
-                                muted
-                                preload="auto"
-                                poster="images/video-poster.jpg"
-                            >
-                                <source src="video1.mp4" type="video/mp4">
-                                Tu navegador no soporta la etiqueta de video.
-                            </video>
-                            <!-- Controles -->
-                            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 opacity-0 transition-opacity duration-300 hover:opacity-100 z-20">
-                                <div class="flex items-center justify-between">
-                                    <!-- Espacio vacío a la izquierda para centrar el botón de play -->
-                                    <div class="w-1/3"></div>
-                                    
-                                    <!-- Botón de play/pause centrado -->
-                                    <div class="flex justify-center w-1/3">
-                                        <button id="play-pause-btn" class="text-white hover:text-blue-400 transition-colors text-2xl">
-                                            <i class="fas fa-play"></i>
-                                        </button>
+                            <div style="padding:56.25% 0 0 0;position:relative;">
+                                <iframe id="vimeo-player" src="https://player.vimeo.com/video/1083527319?h=bded22e70c&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0&amp;controls=0&amp;background=1&amp;loop=1&amp;quality=1080p&amp;dnt=1&amp;transparent=0" 
+                                    frameborder="0" 
+                                    allow="autoplay; fullscreen; picture-in-picture" 
+                                    style="position:absolute;top:0;left:0;width:100%;height:100%;" 
+                                    title="Video SEING SPA"
+                                    preload="auto">
+                                </iframe>
+                                <!-- Controles personalizados -->
+                                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 opacity-0 transition-opacity duration-300 hover:opacity-100 z-20 controls-container">
+                                    <!-- Barra de tiempo -->
+                                    <div class="w-full h-1 bg-gray-600 rounded-full mb-4 cursor-pointer relative group" id="progress-bar">
+                                        <div class="absolute top-0 left-0 h-full bg-blue-500 rounded-full" id="progress"></div>
+                                        <div class="absolute top-1/2 -translate-y-1/2 w-3 h-3 bg-blue-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-200" id="progress-handle"></div>
                                     </div>
-
-                                    <!-- Controles de volumen y pantalla completa a la derecha -->
-                                    <div class="flex items-center gap-4 w-1/3 justify-end">
-                                        <div class="relative group">
-                                            <button id="mute-btn" class="text-white hover:text-blue-400 transition-colors">
-                                                <i class="fas fa-volume-mute"></i>
+                                    <div class="flex items-center justify-between">
+                                        <div class="w-1/3 flex items-center gap-4">
+                                            <button id="rewind-btn" class="text-white hover:text-blue-400 transition-colors">
+                                                <i class="fas fa-backward"></i>
                                             </button>
-                                            <div class="absolute bottom-full right-0 mb-2 bg-black/80 rounded-lg p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                                <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="1" 
-                                                    class="w-24 h-1 bg-gray-600 rounded-lg appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-3 [&::-webkit-slider-thumb]:h-3 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-white">
-                                            </div>
+                                            <button id="forward-btn" class="text-white hover:text-blue-400 transition-colors">
+                                                <i class="fas fa-forward"></i>
+                                            </button>
+                                            <span id="current-time" class="text-white text-sm">0:00</span> / <span id="duration" class="text-white text-sm">0:00</span>
                                         </div>
-                                        <button id="fullscreen-btn" class="text-white hover:text-blue-400 transition-colors">
-                                            <i class="fas fa-expand"></i>
-                                        </button>
+                                        <div class="flex justify-center w-1/3">
+                                            <button id="play-pause-btn" class="text-white hover:text-blue-400 transition-colors text-2xl">
+                                                <i class="fas fa-pause"></i>
+                                            </button>
+                                        </div>
+                                        <div class="flex items-center gap-4 w-1/3 justify-end">
+                                            <div class="relative group">
+                                                <button id="mute-btn" class="text-white hover:text-blue-400 transition-colors">
+                                                    <i class="fas fa-volume-mute"></i>
+                                                </button>
+                                                <div class="absolute bottom-full right-0 mb-2 bg-black/80 rounded-lg p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                                    <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="1" 
+                                                        class="w-24 h-1 bg-gray-600 rounded-lg appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-3 [&::-webkit-slider-thumb]:h-3 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-white">
+                                                </div>
+                                            </div>
+                                            <button id="fullscreen-btn" class="text-white hover:text-blue-400 transition-colors">
+                                                <i class="fas fa-expand"></i>
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -104,9 +198,6 @@
                 </div>
             </div>
 
-            <!-- Scroll -->
-            <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-                <i class="fas fa-chevron-down text-blue-900 text-2xl"></i>
             </div>
         </main>
 
@@ -123,56 +214,156 @@
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="js/script.js"></script>
+    <script src="https://player.vimeo.com/api/player.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            const video = document.getElementById('hero-video');
+            const player = new Vimeo.Player(document.getElementById('vimeo-player'));
             const playPauseBtn = document.getElementById('play-pause-btn');
             const muteBtn = document.getElementById('mute-btn');
             const fullscreenBtn = document.getElementById('fullscreen-btn');
             const volumeSlider = document.getElementById('volume-slider');
+            const progressBar = document.getElementById('progress-bar');
+            const progress = document.getElementById('progress');
+            const progressHandle = document.getElementById('progress-handle');
+            const currentTime = document.getElementById('current-time');
+            const duration = document.getElementById('duration');
+            const rewindBtn = document.getElementById('rewind-btn');
+            const forwardBtn = document.getElementById('forward-btn');
+            const controlsContainer = document.querySelector('.controls-container');
 
-            // Asegurar reproducción inicial sin bloqueo
-            video.muted = true;
-            video.play().catch(() => {
-                console.warn("El navegador bloqueó la reproducción automática.");
-            });
+            let isDragging = false;
+            let currentPosition = 0;
 
-            playPauseBtn.addEventListener('click', () => {
-                if (video.paused) {
-                    video.play();
+            // Función para retroceder/avanzar
+            function seekVideo(seconds) {
+                player.getCurrentTime().then(currentTime => {
+                    player.setCurrentTime(currentTime + seconds);
+                });
+            }
+
+            // Botones de retroceso/avance
+            rewindBtn.addEventListener('click', () => seekVideo(-10));
+            forwardBtn.addEventListener('click', () => seekVideo(10));
+
+            // Mostrar controles en pantalla completa
+            document.addEventListener('fullscreenchange', () => {
+                if (document.fullscreenElement) {
+                    controlsContainer.classList.add('fullscreen-controls');
+                    fullscreenBtn.innerHTML = '<i class="fas fa-compress"></i>';
                 } else {
-                    video.pause();
+                    controlsContainer.classList.remove('fullscreen-controls');
+                    fullscreenBtn.innerHTML = '<i class="fas fa-expand"></i>';
                 }
             });
 
-            video.addEventListener('play', () => {
-                playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+            // Preload del video
+            player.setVolume(0);
+            player.setMuted(true);
+            player.setLoop(true);
+            player.setQuality('1080p');
+            player.setAutopause(false);
+
+            // Formatear tiempo
+            function formatTime(seconds) {
+                const minutes = Math.floor(seconds / 60);
+                seconds = Math.floor(seconds % 60);
+                return `${minutes}:${seconds.toString().padStart(2, '0')}`;
+            }
+
+            // Actualizar posición del handle
+            function updateHandlePosition(percent) {
+                progressHandle.style.left = `${percent * 100}%`;
+            }
+
+            // Actualizar barra de progreso
+            player.on('timeupdate', ({ percent, seconds }) => {
+                if (!isDragging) {
+                    currentPosition = percent;
+                    progress.style.width = `${percent * 100}%`;
+                    updateHandlePosition(percent);
+                    currentTime.textContent = formatTime(seconds);
+                }
             });
 
-            video.addEventListener('pause', () => {
-                playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+            // Obtener duración del video
+            player.getDuration().then(durationSeconds => {
+                duration.textContent = formatTime(durationSeconds);
+            });
+
+            // Función para actualizar la posición visual
+            function updateVisualPosition(clientX) {
+                const rect = progressBar.getBoundingClientRect();
+                currentPosition = Math.max(0, Math.min(1, (clientX - rect.left) / rect.width));
+                progress.style.width = `${currentPosition * 100}%`;
+                updateHandlePosition(currentPosition);
+            }
+
+            // Eventos para arrastrar la barra de tiempo
+            progressBar.addEventListener('mousedown', (e) => {
+                isDragging = true;
+                updateVisualPosition(e.clientX);
+            });
+
+            document.addEventListener('mousemove', (e) => {
+                if (isDragging) {
+                    updateVisualPosition(e.clientX);
+                }
+            });
+
+            document.addEventListener('mouseup', (e) => {
+                if (isDragging) {
+                    updateVisualPosition(e.clientX);
+                    player.getDuration().then(duration => {
+                        player.setCurrentTime(currentPosition * duration);
+                    });
+                }
+                isDragging = false;
+            });
+
+            // Control de progreso al hacer clic
+            progressBar.addEventListener('click', (e) => {
+                if (!isDragging) {
+                    updateVisualPosition(e.clientX);
+                    player.getDuration().then(duration => {
+                        player.setCurrentTime(currentPosition * duration);
+                    });
+                }
+            });
+
+            // Control de play/pause
+            playPauseBtn.addEventListener('click', () => {
+                player.getPaused().then(paused => {
+                    if (paused) {
+                        player.play();
+                        playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                    } else {
+                        player.pause();
+                        playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+                    }
+                });
             });
 
             // Control de volumen
             volumeSlider.addEventListener('input', (e) => {
-                const volume = e.target.value;
-                video.volume = volume;
-                video.muted = volume === '0';
+                const volume = parseFloat(e.target.value);
+                player.setVolume(volume);
                 updateVolumeIcon(volume);
             });
 
+            // Control de mute
             muteBtn.addEventListener('click', () => {
-                video.muted = !video.muted;
-                if (video.muted) {
-                    volumeSlider.value = 0;
-                } else {
-                    volumeSlider.value = video.volume || 1;
-                }
-                updateVolumeIcon(volumeSlider.value);
+                player.getMuted().then(muted => {
+                    if (muted) {
+                        player.setVolume(volumeSlider.value);
+                        player.setMuted(false);
+                    } else {
+                        player.setMuted(true);
+                    }
+                });
             });
 
             function updateVolumeIcon(volume) {
-                if (volume === '0' || video.muted) {
+                if (volume === 0) {
                     muteBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
                 } else if (volume < 0.5) {
                     muteBtn.innerHTML = '<i class="fas fa-volume-down"></i>';
@@ -181,26 +372,23 @@
                 }
             }
 
-            // Función para pantalla completa
+            // Control de pantalla completa
             fullscreenBtn.addEventListener('click', () => {
-                if (!document.fullscreenElement) {
-                    video.requestFullscreen().catch(err => {
-                        console.log(`Error al intentar entrar en pantalla completa: ${err.message}`);
-                    });
-                    fullscreenBtn.innerHTML = '<i class="fas fa-compress"></i>';
-                } else {
-                    document.exitFullscreen();
-                    fullscreenBtn.innerHTML = '<i class="fas fa-expand"></i>';
-                }
+                player.requestFullscreen();
             });
 
-            // Actualizar icono cuando cambie el estado de pantalla completa
-            document.addEventListener('fullscreenchange', () => {
-                if (document.fullscreenElement) {
-                    fullscreenBtn.innerHTML = '<i class="fas fa-compress"></i>';
-                } else {
-                    fullscreenBtn.innerHTML = '<i class="fas fa-expand"></i>';
-                }
+            // Actualizar estado inicial
+            player.on('play', () => {
+                playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+            });
+
+            player.on('pause', () => {
+                playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+            });
+
+            player.on('volumechange', ({ volume }) => {
+                volumeSlider.value = volume;
+                updateVolumeIcon(volume);
             });
         });
 
@@ -223,6 +411,71 @@
         btnTop.addEventListener('click', function(e) {
             e.preventDefault();
             window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Script para optimización de imágenes
+        document.addEventListener('DOMContentLoaded', function() {
+            // Configuración de Intersection Observer para lazy loading
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        const src = img.dataset.src;
+                        
+                        if (src) {
+                            // Crear placeholder
+                            img.classList.add('image-placeholder');
+                            
+                            // Cargar imagen
+                            const tempImage = new Image();
+                            tempImage.onload = function() {
+                                img.src = src;
+                                img.classList.remove('image-placeholder');
+                                img.classList.add('loaded');
+                            };
+                            tempImage.src = src;
+                            
+                            // Dejar de observar
+                            observer.unobserve(img);
+                        }
+                    }
+                });
+            }, {
+                rootMargin: '50px 0px',
+                threshold: 0.01
+            });
+
+            // Observar todas las imágenes con data-src
+            document.querySelectorAll('img[data-src]').forEach(img => {
+                imageObserver.observe(img);
+            });
+
+            // Optimización de lightbox
+            const lightboxImages = document.querySelectorAll('.lightbox-image');
+            lightboxImages.forEach(img => {
+                img.addEventListener('load', function() {
+                    this.classList.add('loaded');
+                });
+            });
+
+            // Precarga de imágenes adyacentes en la galería
+            function preloadAdjacentImages(currentIndex, images) {
+                const preloadCount = 2; // Número de imágenes a precargar
+                for (let i = 1; i <= preloadCount; i++) {
+                    const nextIndex = (currentIndex + i) % images.length;
+                    const prevIndex = (currentIndex - i + images.length) % images.length;
+                    
+                    if (images[nextIndex]) {
+                        const nextImg = new Image();
+                        nextImg.src = images[nextIndex];
+                    }
+                    
+                    if (images[prevIndex]) {
+                        const prevImg = new Image();
+                        prevImg.src = images[prevIndex];
+                    }
+                }
+            }
         });
     </script>
 </body>
