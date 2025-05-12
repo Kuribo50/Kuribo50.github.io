@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css>
+    <link rel="stylesheet" href="lightbox.css">
+
+
+
+    <style>
+        /* Estilos para el botón flotante */
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            /* Ajusta la posición vertical según tu preferencia */
+            right: 20px;
+            /* Ajusta la posición horizontal según tu preferencia */
+            background-color: #25d366;
+            /* Color de fondo de WhatsApp */
+            color: #fff;
+            /* Color de texto */
+            border: none;
+            border-radius: 50%;
+            padding: 15px;
+            /* Tamaño del botón */
+            width: 60px;
+            /* Añade un ancho deseado */
+            height: 60px;
+            /* Añade una altura deseada (igual al ancho para hacerlo perfectamente redondo) */
+            text-align: center;
+            font-size: 24px;
+            line-height: 30px;
+            /* Tamaño de fuente */
+            cursor: pointer;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            /* Sombra para el botón */
+        }
+
+        /* Cambia el color del botón al pasar el mouse */
+        .whatsapp-button:hover {
+            background-color: #128C7E;
+            /* Cambia el color al pasar el mouse */
+        }
+
+        /* Estilos para el botón flotante */
+        .facebook-button {
+            position: fixed;
+            bottom: 90px;
+            /* Ajusta la posición vertical según tu preferencia */
+            right: 20px;
+            /* Ajusta la posición horizontal según tu preferencia */
+            background-color: #4c70ba;
+            /* Color de fondo de WhatsApp */
+            color: #fff;
+            /* Color de texto */
+            border: none;
+            border-radius: 50%;
+            padding: 15px;
+            /* Tamaño del botón */
+            width: 60px;
+            /* Añade un ancho deseado */
+            height: 60px;
+            /* Añade una altura deseada (igual al ancho para hacerlo perfectamente redondo) */
+            text-align: center;
+            font-size: 24px;
+            line-height: 30px;
+            /* Tamaño de fuente */
+            cursor: pointer;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            /* Sombra para el botón */
+        }
+
+        /* Cambia el color del botón al pasar el mouse */
+        .facebook-button:hover {
+            background-color: #3B5998;
+            /* Cambia el color al pasar el mouse */
+        }
+
+        /* Estilos para el botón flotante */
+        .instagram-button {
+            position: fixed;
+            bottom: 160px;
+            /* Ajusta la posición vertical según tu preferencia */
+            right: 20px;
+            /* Ajusta la posición horizontal según tu preferencia */
+            background-color: #E1306C;
+            /* Color de fondo de WhatsApp */
+            color: #fff;
+            /* Color de texto */
+            border: none;
+            border-radius: 50%;
+            padding: 15px;
+            /* Tamaño del botón */
+            width: 60px;
+            /* Añade un ancho deseado */
+            height: 60px;
+            /* Añade una altura deseada (igual al ancho para hacerlo perfectamente redondo) */
+            text-align: center;
+            font-size: 24px;
+            line-height: 30px;
+            /* Tamaño de fuente */
+            cursor: pointer;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            /* Sombra para el botón */
+        }
+
+        /* Cambia el color del botón al pasar el mouse */
+        .instagram-button:hover {
+            background-color: #C13584;
+            /* Cambia el color al pasar el mouse */
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Botón flotante de WhatsApp con ícono -->
+    <a class="whatsapp-button" href=https://wa.me/56994658564>
+        <i class="fab fa-whatsapp"></i> <!-- Ícono de WhatsApp de Font Awesome -->
+    </a>
+
+    <!-- Botón flotante de WhatsApp con ícono -->
+    <a class="facebook-button" href=https://web.facebook.com/people/seingspacpp/100078845763680 />
+    <i class="fab fa-facebook"></i> <!-- Ícono de WhatsApp de Font Awesome -->
+    </a>
+
+    <!-- Botón flotante de WhatsApp con ícono -->
+    <a class="instagram-button" href=https://www.instagram.com/seingspa_cl>
+        <i class="fab fa-instagram"></i> <!-- Ícono de WhatsApp de Font Awesome -->
+    </a>
+
+    <div class="menu container">
+        <a href="index.html" class="logo"><img src="images/Logo/logo.png" alt=""></a>
+        <input type="checkbox" id="menu">
+        <label for="menu">
+            <img src="images/menu.svg" class="menu-icono" alt="" style="height: 45px; width: 45px;">
+        </label>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="empresa.html">Empresa</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="productos.html">productos</a></li>
+                <li><a href="galeria.html" class="selected">Galeria</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+
+            </ul>
+        </nav>
+    </div>
+
+
+    <section class="galeria">
+
+        <div class="galeria-content container">
+            <h2>Galeria</h2>
+
+            <div class="gallery-product">
+                <div class="gallery" style="margin-top: auto;">
+
+                    <a href="images/Galeria/1.JPG" data-lightbox="models" data-title="Nombre de la imagen"><img
+                            src="images/Galeria/1.JPG" alt=""></a>
+                    <a href="images/Galeria/2.JPG" data-lightbox="models" data-title="Nombre de la imagen"><img
+                            src="images/Galeria/2.JPG" alt=""></a>
+                    <a href="images/Galeria/3.JPG" data-lightbox="models" data-title="Nombre de la imagen"><img
+                            src="images/Galeria/3.JPG" alt=""></a>
+                    <a href="images/Galeria/4.JPG" data-lightbox="models" data-title="Nombre de la imagen"><img
+                            src="images/Galeria/4.JPG" alt=""></a>
+                    <a href="images/Galeria/5.JPG" data-lightbox="models" data-title="Nombre de la imagen"><img
+                            src="images/Galeria/5.JPG" alt=""></a>
+                    <a href="images/Galeria/6.JPG" data-lightbox="models" data-title="Nombre de la imagen"><img
+                            src="images/Galeria/6.JPG" alt=""></a>
+                    <a href="images/Galeria/7.JPG" data-lightbox="models" data-title="Nombre de la imagen"><img
+                            src="images/Galeria/7.JPG" alt=""></a>
+                    <a href="images/Galeria/8.JPG" data-lightbox="models" data-title="Nombre de la imagen"><img
+                            src="images/Galeria/8.JPG" alt=""></a>
+                    <a href="images/Galeria/9.JPG" data-lightbox="models" data-title="Nombre de la imagen"><img
+                            src="images/Galeria/9.JPG" alt=""></a>
+                    <a href="images/Galeria/10.JPG" data-lightbox="models" data-title="Nombre de la imagen"><img
+                            src="images/Galeria/10.JPG" alt=""></a>
+                    <a href="images/Galeria/11.JPG" data-lightbox="models" data-title="Nombre de la imagen"><img
+                            src="images/Galeria/11.JPG" alt=""></a>
+                    <a href="images/Galeria/12.JPG" data-lightbox="models" data-title="Nombre de la imagen"><img
+                            src="images/Galeria/12.JPG" alt=""></a>
+                    <a href="images/Galeria/15.jpeg" data-lightbox="models" data-title="Nombre de la imagen"><img
+                            src="images/Galeria/15.jpeg" alt=""></a>
+                    <a href="images/Galeria/18.jpeg" data-lightbox="models" data-title="Nombre de la imagen"><img
+                            src="images/Galeria/18.jpeg" alt=""></a>
+                    <a href="images/Galeria/19.jpeg" data-lightbox="models" data-title="Nombre de la imagen"><img
+                            src="images/Galeria/19.jpeg" alt=""></a>
+                    <a href="images/Galeria/20.jpeg" data-lightbox="models" data-title="Nombre de la imagen"><img
+                            src="images/Galeria/20.jpeg" alt=""></a>
+                    <a href="images/Galeria/21.jpeg" data-lightbox="models" data-title="Nombre de la imagen"><img
+                            src="images/Galeria/21.jpeg" alt=""></a>
+                    <a href="images/Galeria/22.jpeg" data-lightbox="models" data-title="Nombre de la imagen"><img
+                            src="images/Galeria/22.jpeg" alt=""></a>
+                    <a href="images/Galeria/13.jpeg" data-lightbox="models" data-title="Nombre de la imagen"><img
+                            src="images/Galeria/13.jpeg" alt=""></a>
+                    <a href="images/Galeria/14.jpeg" data-lightbox="models" data-title="Nombre de la imagen"><img
+                            src="images/Galeria/14.jpeg" alt=""></a>
+                    <a href="images/Galeria/16.jpeg" data-lightbox="models" data-title="Nombre de la imagen"><img
+                            src="images/Galeria/16.jpg" alt=""></a>
+                    <a href="images/Galeria/17.jpeg" data-lightbox="models" data-title="Nombre de la imagen"><img
+                            src="images/Galeria/17.jpeg" alt=""></a>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <footer class="footer">
+        <div class="footer-content container">
+            <div class="link">
+                <h3>Dirección</h3>
+                <ul>
+                    <li><a href="https://maps.app.goo.gl/yBJCEGrcHKfUK6t26">Rengo 1228, Concepción.</a></li>
+                </ul>
+            </div>
+            <div class="link">
+                <h3>Correo</h3>
+                <ul>
+                    <li><a href="#">ventas@seingspa.cl</a></li>
+                    <li><a href="#">mrubilar@seingspa.cl</a></li>
+                </ul>
+            </div>
+            <div class="link">
+                <h3>Teléfonos</h3>
+                <ul>
+                    <li><a href="tel:+569 94658564">+569 94658564</a></li>
+                    <li><a href="tel:+569 89226213">+569 89226213</a></li>
+
+                </ul>
+            </div>
+            <div class="link">
+                <h3><img src="images/Logo/logo-blanco.png" class="menu-icono" alt=""
+                        style="width: 200px; height: 80px;"></h3>
+            </div>
+        </div>
+    </footer>
+    <div class="copyright">
+        <p>Creado por Sergio Vargas T &copy; 2023. Todos los derechos reservados.</p>
+    </div>
+
+    <script src="lightbox-plus-jquery.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+</body>
+
+</html>

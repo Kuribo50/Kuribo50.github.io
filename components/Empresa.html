@@ -1,0 +1,131 @@
+<!-- Empresa Section -->
+<section id="empresa" class="bg-gray-50 py-16 md:py-20 relative overflow-hidden">
+    <!-- Decorative background elements -->
+    <div class="absolute top-0 right-0 w-1/3 h-1/3 bg-gradient-to-br from-blue-100/30 to-transparent rounded-bl-full"></div>
+    <div class="absolute bottom-0 left-0 w-1/2 h-1/2 bg-gradient-to-tr from-blue-50/40 to-transparent rounded-tr-full"></div>
+
+    <div class="container mx-auto px-4 max-w-7xl relative">
+        <div class="flex flex-col md:flex-row items-center gap-12">
+            <div class="w-full md:w-1/2" data-aos="fade-right" data-aos-duration="1000">
+                <div class="mb-8">
+                    <span class="inline-block px-4 py-2 bg-blue-100 text-blue-900 rounded-full text-sm font-semibold mb-4">Nuestra Empresa</span>
+                    <h2 class="title-font text-4xl md:text-5xl text-blue-900 font-bold mb-6">
+                        BIENVENIDOS A 
+                        <span class="gradient-text block mt-2">SEING SPA</span>
+                    </h2>
+                </div>
+
+                <div class="prose prose-lg text-gray-700 mb-8">
+                    <p class="leading-relaxed">
+                        Somos un equipo élite de ingenieros y técnicos especializados, con más de una década de experiencia en el sector industrial, energético y área móvil. Nuestra pasión es crear soluciones óleo hidráulicas personalizadas que transforman los desafíos de nuestros clientes en ventajas competitivas.
+                    </p>
+                </div>
+
+                <!-- Características principales -->
+                <div class="grid gap-6">
+                    <div class="flex items-start gap-4 group" data-aos="fade-up" data-aos-delay="100">
+                        <div class="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center group-hover:bg-blue-900 transition-colors duration-300">
+                            <i class="fas fa-chart-line text-blue-900 text-xl group-hover:text-white transition-colors duration-300"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-blue-900 mb-2">Experiencia Comprobada</h3>
+                            <p class="text-gray-600">Más de 10 años entregando soluciones de excelencia en ingeniería óleo hidráulica.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4 group" data-aos="fade-up" data-aos-delay="200">
+                        <div class="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center group-hover:bg-blue-900 transition-colors duration-300">
+                            <i class="fas fa-cogs text-blue-900 text-xl group-hover:text-white transition-colors duration-300"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-blue-900 mb-2">Soluciones Integrales</h3>
+                            <p class="text-gray-600">Diseñamos y desarrollamos sistemas personalizados que se adaptan perfectamente a sus necesidades.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4 group" data-aos="fade-up" data-aos-delay="300">
+                        <div class="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center group-hover:bg-blue-900 transition-colors duration-300">
+                            <i class="fas fa-medal text-blue-900 text-xl group-hover:text-white transition-colors duration-300"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-blue-900 mb-2">Calidad Garantizada</h3>
+                            <p class="text-gray-600">Compromiso inquebrantable con la excelencia y la satisfacción total del cliente.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-full md:w-1/2 relative" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                <div class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-blue-900">
+                    <div class="absolute inset-0 bg-gradient-to-r from-blue-900/20 to-transparent z-10"></div>
+                    <!-- Carrusel de imágenes -->
+                    <div id="empresa-carousel" class="relative w-full h-[320px] md:h-[400px] flex flex-col items-center justify-center">
+                        <img 
+                            id="carousel-image"
+                            src="images/Inicio/2.jpeg"
+                            alt="SEING SPA Ingeniería - Fachada y vehículos" 
+                            class="w-full h-full object-cover object-center rounded-xl border-4 border-white shadow-lg transition-all duration-500"
+                            loading="lazy"
+                        >
+                        <!-- Dots indicadores -->
+                        <div id="carousel-dots" class="flex justify-center gap-2 mt-4"></div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Carrusel Script -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Lista de imágenes del carrusel
+        const images = [
+            'images/Inicio/2.jpeg',
+            'images/Inicio/1.JPG',
+            'images/Inicio/3.JPG',
+            // Si quieres agregar BienvenidoInicio.png, descomenta la siguiente línea:
+            // 'images/Inicio/BienvenidoInicio.png'
+        ];
+        let current = 0;
+        const img = document.getElementById('carousel-image');
+        const dotsContainer = document.getElementById('carousel-dots');
+        let interval;
+
+        function showImage(idx) {
+            img.src = images[idx];
+            // Actualizar dots
+            Array.from(dotsContainer.children).forEach((dot, i) => {
+                dot.className = i === idx
+                    ? 'w-4 h-4 rounded-full bg-blue-900 border-2 border-white shadow transition-all duration-300 cursor-pointer'
+                    : 'w-3 h-3 rounded-full bg-white border-2 border-blue-900 shadow transition-all duration-300 opacity-60 cursor-pointer';
+            });
+        }
+
+        // Crear dots
+        images.forEach((_, i) => {
+            const dot = document.createElement('button');
+            dot.addEventListener('click', () => {
+                current = i;
+                showImage(current);
+                resetInterval();
+            });
+            dotsContainer.appendChild(dot);
+        });
+
+        function nextImage() {
+            current = (current + 1) % images.length;
+            showImage(current);
+        }
+
+        function resetInterval() {
+            clearInterval(interval);
+            interval = setInterval(nextImage, 5000);
+        }
+
+        // Inicializar
+        showImage(current);
+        interval = setInterval(nextImage, 5000);
+    });
+</script> 

@@ -1,0 +1,2822 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #E1E2E6;
+
+}
+
+.container {
+    max-width: 100%;
+    margin: 0;
+    padding: 0 200px;
+}
+
+.header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2),
+            rgba(0, 0, 0, 0.2)),
+        url(images/SeingSpa/SeingSpa-1.jpeg);
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+
+}
+
+
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    background-color: #ffffff;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
+
+.logo {
+    height: 50px;
+}
+
+.logo img {
+    width: 180px;
+    height: 60px;
+}
+
+.menu .navbar ul li {
+    position: relative;
+    float: left;
+}
+
+.menu .navbar ul li a {
+    font-size: 18px;
+    padding: 20px;
+    color: #434bb8;
+    display: block;
+    font-weight: 600;
+    margin-right: 5px;
+}
+
+.menu .navbar ul li {
+    color: #434bb8;
+}
+
+.menu .navbar a:hover {
+    background: #434bb8;
+    color: #E1E2E6;
+    transition: all 0.1s ease;
+    border-radius: 4px;
+
+}
+
+.menu .navbar a.selected {
+    background: #434bb8;
+    color: #E1E2E6;
+    border-radius: 4px;
+    transition: all 0.1s ease;
+
+}
+
+#menu {
+    display: none;
+}
+
+.menu-icono {
+    width: 25px;
+}
+
+.menu label {
+    cursor: pointer;
+    display: none;
+}
+
+.header-content {
+    text-align: center;
+}
+
+.header-content img {
+    width: 250px;
+    height: 80px;
+    margin-top: 50px;
+    align-items: center;
+}
+
+
+
+.header-content h1 {
+    font-size: 75px;
+    line-height: 80px;
+    color: #F9FAFC;
+    text-transform: uppercase;
+    margin-bottom: 35px;
+}
+
+.header-content h2 {
+    font-size: 45px;
+    line-height: 80px;
+    color: #F9FAFC;
+    text-transform: uppercase;
+    margin-bottom: 35px;
+}
+
+.header-content p {
+    font-size: 16px;
+    color: #C5C5C5;
+    padding: 0 250px;
+    margin-bottom: 25px;
+
+}
+
+.btn-1 {
+    display: inline-block;
+    padding: 11px 35px;
+    background-color: #434bb8;
+    color: #F9FAFC;
+    text-transform: uppercase;
+    border-radius: 5px;
+}
+
+.btn-1:hover {
+    background-color: #3c3c8c;
+}
+
+
+.btn-circulo {
+    display: flex; /* Utiliza flexbox para centrar vertical y horizontalmente el contenido */
+    align-items: center;
+    justify-content: center;
+    width: 50px; /* Ancho y alto del botón */
+    height: 50px;
+    background-color: #3c3c8c; /* Cambiado a un color de fondo más oscuro */
+    color: #F9FAFC;
+    border-radius: 50%; /* Hace que el botón sea redondo */
+    border: none; /* Elimina el borde */
+    cursor: pointer;
+    text-decoration: none; /* Añadido para quitar el subrayado de los botones enlaces */
+    text-align: center;
+}
+
+.btn-circulo::before {
+    content: url("images/SVG/chevron-down.svg"); /* Ruta al icono SVG */
+    width: 14px; /* Ancho del icono */
+    height: 14px; /* Alto del icono */
+    margin: 0 auto; /* Centra horizontalmente el icono */
+    display: block;
+    left: 24%;
+    top: 24%;
+}
+
+
+
+/* Definir reglas CSS para centrar las secciones */
+.general-inicio,
+.ServiciosInicio,
+.ContactoInicio {
+    scroll-snap-align: center;
+    scroll-margin-top: 50vh; /* La mitad de la altura de la ventana */
+}
+
+/* Definir reglas CSS para las secciones secundarias que no deben centrarse */
+.general-inicio-2,
+.general-inicio-3 {
+    scroll-snap-align: start;
+    scroll-margin-top: 0;
+}
+
+/* Agregar reglas CSS para el contenedor principal que habilita el desplazamiento suave */
+body {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+    scroll-behavior: smooth; /* Para el desplazamiento suave */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.btn-circulo:hover {
+    background-color: #3c3c8c;
+}
+
+
+
+
+.txt-p {
+    font-size: 16px;
+    color: #414247;
+    padding: 0 250px;
+    margin-bottom: 35px;
+}
+
+
+
+.coffee-content {
+    text-align: center;
+    padding: 100px 0;
+}
+
+.coffee-content h2 {
+    font-size: 55px;
+    line-height: 70px;
+    color: #323237;
+    text-transform: uppercase;
+    padding: 0 250px;
+    margin-bottom: 15px;
+}
+
+.coffee-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.coffee-1 img {
+    width: 200px;
+}
+
+.coffee-1 {
+    padding: 0 25px;
+}
+
+.coffee-img {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.coffee-1 h3 {
+    color: #323237;
+    font-size: 20px;
+    margin-bottom: 15px;
+
+}
+
+
+
+
+.ServiciosInicio {
+    background-color: #393e92;
+}
+
+
+.ServiciosInicio-content {
+    text-align: center;
+    padding: 100px 0;
+}
+
+.ServiciosInicio-1 p {
+    font-size: 16px;
+    color: #F9FAFC;
+    padding: 0 25px;
+    margin-bottom: 35px;
+}
+
+.ServiciosInicio-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.ServiciosInicio-1 img {
+    height: 100px;
+    width: 100px;
+}
+
+.ServiciosInicio-1 {
+    padding: 0 25px;
+}
+
+.ServiciosInicio-img {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.ServiciosInicio-1 h3 {
+    color: #F9FAFC;
+    font-size: 20px;
+    margin-bottom: 15px;
+
+}
+
+.ServiciosInicio-btn {
+    display: inline-block;
+    padding: 11px 35px;
+    background-color: #434bb8;
+    color: #F9FAFC;
+    text-transform: uppercase;
+    border-radius: 5px;
+}
+
+
+
+
+
+/************************ Esta es la seccion "ContactoInicio" en pestaña index.html ************************/
+
+.ContactoInicio {
+    background-color: #E1E2E6;
+}
+
+
+.ContactoInicio-content {
+    text-align: center;
+    padding: 100px 0;
+}
+
+.ContactoInicio-1 p {
+    font-size: 16px;
+    color: #414247;
+    padding: 0 25px;
+    margin-bottom: 35px;
+}
+
+.ContactoInicio-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.ContactoInicio-1 img {
+    height: 100px;
+    width: 100px;
+}
+
+.ContactoInicio-1 {
+    padding: 0 25px;
+}
+
+.ContactoInicio-img {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.ContactoInicio-1 h3 {
+    color: #414247;
+    font-size: 20px;
+    margin-bottom: 15px;
+
+}
+
+.ContactoInicio-btn {
+    display: inline-block;
+    padding: 11px 35px;
+    background-color: #434bb8;
+    color: #F9FAFC;
+    text-transform: uppercase;
+    border-radius: 5px;
+}
+
+
+
+/************************ Esta es la seccion "EquipoEmpresa" en pestaña empresa.html ************************/
+
+
+.EquipoEmpresa {
+    padding: 100px 0;
+    text-align: center;
+}
+
+.EquipoEmpresa-content {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.EquipoEmpresa-1 {
+    padding: 15px 100px;
+}
+
+.EquipoEmpresa-1 img {
+    width: 250px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    border-color: #3a42a9;
+}
+
+.EquipoEmpresa-1 h3 {
+    font-size: 25px;
+    color: #323237;
+}
+
+.EquipoEmpresa h2 {
+    padding-bottom: 25px;
+}
+
+.EquipoEmpresa-btn {
+    display: inline-block;
+    padding: 11px 35px;
+    background-color: #434bb8;
+    color: #F9FAFC;
+    text-transform: uppercase;
+    border-radius: 5px;
+}
+
+.EquipoEmpresa-1 h3,
+.EquipoEmpresa-1 p {
+    margin: 0;
+    /* Establece el margen en 0 para eliminar el espacio en la parte superior e inferior */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.ServiciosPrincipal {
+    display: flex;
+}
+
+.ServiciosPrincipal-1 {
+    width: 50%;
+    padding: 100px 250px 100px 100px;
+    background-color: #E1E2E6;
+}
+
+.ServiciosPrincipal-2 {
+    background-image: url(images/Servicios/OleoHidraulica/7.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 50%;
+
+}
+
+.ServiciosPrincipal-3 {
+    background-image: url(images/Servicios/Neumatica/2.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 50%;
+
+}
+
+.ServiciosPrincipal h2 {
+    font-size: 55px;
+    line-height: 70px;
+    color: #323237;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.ServiciosPrincipal p {
+    font-size: 16px;
+    color: #414247;
+    margin: 25px 0 45px 0;
+
+}
+
+.ServiciosPrincipal-btn {
+    display: inline-block;
+    padding: 11px 35px;
+    background-color: #434bb8;
+    color: #F9FAFC;
+    text-transform: uppercase;
+    border-radius: 5px;
+}
+
+
+
+
+
+
+
+.ServiciosPrincipal2 {
+    display: flex;
+}
+
+.ServiciosPrincipal2-1 {
+    width: 50%;
+    padding: 100px 250px 100px 100px;
+    background-color: #E1E2E6;
+}
+
+.ServiciosPrincipal2-2 {
+    background-image: url(images/Servicios/Electrica/1.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 50%;
+
+}
+
+.ServiciosPrincipal2-3 {
+    background-image: url(images/Servicios/Maestranza/3.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 50%;
+
+}
+
+.ServiciosPrincipal2 h2 {
+    font-size: 55px;
+    line-height: 70px;
+    color: #323237;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.ServiciosPrincipal2 p {
+    font-size: 16px;
+    color: #414247;
+    margin: 25px 0 45px 0;
+
+}
+
+.ServiciosPrincipal2-btn {
+    display: inline-block;
+    padding: 11px 35px;
+    background-color: #434bb8;
+    color: #F9FAFC;
+    text-transform: uppercase;
+    border-radius: 5px;
+}
+
+
+
+
+
+
+
+
+.ContactoInfo {
+    display: flex;
+}
+
+.ContactoInfo-1 {
+    width: 50%;
+    padding: 100px 150px 100px 100px;
+    background-color: #E1E2E6;
+}
+
+.ContactoInfo-2 {
+    background-image: url(images/SeingSpa/SeingSpa-1.jpeg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 50%;
+
+}
+
+.ContactoInfo h2 {
+    font-size: 55px;
+    line-height: 70px;
+    color: #323237;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.ContactoInfo h3 {
+    font-size: 25px;
+    line-height: 70px;
+    color: #323237;
+    text-transform: uppercase;
+
+}
+
+.ContactoInfo p {
+    font-size: 26px;
+    color: #414247;
+    margin: 0;
+
+}
+
+.ContactoInfo-btn {
+    display: inline-block;
+    padding: 11px 35px;
+    background-color: #434bb8;
+    color: #F9FAFC;
+    text-transform: uppercase;
+    border-radius: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.galeria-content {
+    text-align: center;
+    padding: 100px 0;
+}
+
+.galeria-content h2 {
+    font-size: 55px;
+    line-height: 70px;
+    color: #323237;
+    text-transform: uppercase;
+    padding: 0 250px;
+    margin-bottom: 15px;
+}
+
+.galeria-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.galeria-1 img {
+    width: 200px;
+}
+
+.galeria-1 {
+    padding: 0 25px;
+}
+
+.galeria-img {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.galeria-1 h3 {
+    color: #323237;
+    font-size: 20px;
+    margin-bottom: 15px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.principal {
+    background-color: #393e92;
+    min-height: 90vh;
+}
+
+
+.principal-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.principal-1 img {
+    width: 200px;
+}
+
+.principal-1 {
+    padding: 0 45px;
+}
+
+.principal-img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    justify-content: center;
+}
+
+.principal-1 h2 {
+    color: #F9FAFC;
+    font-size: 20px;
+    margin-bottom: 15px;
+
+}
+
+.principal-content {
+    text-align: center;
+    padding: 350px 0;
+    margin: 0px 120px 0px;
+}
+
+
+.principal-1 h3 {
+    color: #F9FAFC;
+    font-size: 25px;
+    margin-bottom: 15px;
+
+}
+
+.principal-1 p {
+    font-size: 16px;
+    color: #F9FAFC;
+    margin: 25px 0 45px 0;
+
+}
+
+
+
+
+.contactop {
+    background-color: #393e92;
+    min-height: 64vh;
+}
+
+.contactop-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.contactop-1 img {
+    width: 200px;
+}
+
+.contactop-1 {
+    padding: 0 25px;
+    width: 500px;
+
+}
+
+.contactop-img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    justify-content: center;
+}
+
+.contactop-1 h2 {
+    color: #F9FAFC;
+    font-size: 20px;
+    margin-bottom: 15px;
+
+}
+
+.contactop-content {
+    text-align: center;
+    padding: 100px 0;
+
+
+}
+
+
+.contactop-content h3 {
+    color: #F9FAFC;
+    font-size: 35px;
+    margin-bottom: 15px;
+
+}
+
+.contactop-1 p {
+    font-size: 16px;
+    color: #F9FAFC;
+    margin: 25px 0 45px 0;
+
+}
+
+
+
+.contacto-formulario {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #393e92;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.contacto-formulario h1 {
+    margin: 0;
+    padding: 10px;
+}
+
+.contacto-formulario form {
+    text-align: left;
+}
+
+.contacto-formulario label {
+    display: block;
+    margin: 10px 0;
+    color: #F9FAFC;
+    font-size: 16px;
+}
+
+.contacto-formulario input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+    width: 100%;
+    padding: 11px 35px;
+    /* Aplicamos el mismo estilo que al botón */
+    margin: 5px 0;
+    background-color: #F9FAFC;
+    /* Fondo del input */
+    color: #434bb8;
+    /* Color del texto del input */
+    text-transform: uppercase;
+    border: none;
+    border-radius: 5px;
+}
+
+.contacto-formulario textarea {
+    height: 200px;
+}
+
+.contacto-formulario input[type="text"],
+input[type="email"],
+input[type="tel"] {
+    color: #3a42a9;
+    /* Ajustamos el color del texto de los input de texto y email */
+}
+
+.contacto-formulario input[type="submit"] {
+    background-color: #434bb8;
+    /* Fondo del botón */
+    color: #F9FAFC;
+    /* Color del texto del botón */
+    padding: 11px 35px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+
+}
+
+.contacto-formulario input[type="submit"]:hover {
+    background-color: #3a42a9;
+    /* Color de fondo al pasar el ratón */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.services {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7),
+            rgba(0, 0, 0, 0.7)),
+        url(images/bg2.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 100px 0;
+
+}
+
+.services-content {
+    text-align: center;
+}
+
+.services-content h2 {
+    font-size: 55px;
+    line-height: 70px;
+    color: #F9FAFC;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+}
+
+.services-content p {
+    font-size: 16px;
+    color: #C5C5C5;
+    margin-bottom: 50px;
+    padding: 0 100px;
+}
+
+.services-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.services-1 {
+    padding: 0 100px;
+}
+
+.services-1 img {
+    width: 25px;
+    margin-bottom: 15px;
+}
+
+.services-1 h3 {
+    color: #EACCB3;
+    font-size: 18px;
+}
+
+
+.general {
+    display: flex;
+}
+
+.general-1 {
+    width: 50%;
+    padding: 100px 250px 100px 100px;
+    background-color: #E1E2E6;
+}
+
+.general-2 {
+    background-image: url(images/Servicios/Neumatica/1.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 50%;
+
+}
+
+.general-3 {
+    background-image: url(images/Servicios/OleoHidraulica/4.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 50%;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.general-ubicacion {
+    display: flex;
+}
+
+.general-ubicacion-1 {
+    width: 60%;
+    padding: 100px 90px 100px 100px;
+    background-color: #E1E2E6;
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Centra verticalmente el contenido */
+    align-items: center;
+    /* Centra horizontalmente el contenido */
+    text-align: center;
+    /* Alinea el texto al centro */
+}
+
+.general-ubicacion-1 img {
+    max-width: 100%;
+    /* Asegúrate de que la imagen no sea más ancha que su contenedor */
+    margin: 20px 0;
+    /* Agrega espacio entre el texto y la imagen */
+}
+
+.general-ubicacion h2 {
+    font-size: 45px;
+    line-height: 70px;
+    color: #323237;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.general-ubicacion p {
+    font-size: 20px;
+    color: #414247;
+    margin: 0px 0 0px 0;
+}
+
+.general-ubicacion-2 {
+
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 50%;
+    min-height: 100vh;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.general-servicio {
+    display: flex;
+    min-height: 50vh;
+}
+
+.general-servicio-1 {
+    width: 60%;
+    padding: 100px 90px 100px 100px;
+    background-color: #E1E2E6;
+
+}
+
+.general-servicio-2 {
+    background-image: url(images/Servicios/OleoHidraulica/7.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 50%;
+
+
+}
+
+.general-servicio-3 {
+    background-image: url(images/Servicios/Neumatica/2.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 60%;
+
+
+}
+
+.general-servicio h2 {
+    font-size: 45px;
+    line-height: 70px;
+    color: #323237;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+
+.general-servicio p {
+    font-size: 16px;
+    color: #414247;
+    margin: 15px 0 10px 0;
+
+}
+
+
+
+
+
+
+.general-servicios {
+    display: flex;
+    min-height: 50vh;
+}
+
+.general-servicios-1 {
+    width: 60%;
+    padding: 100px 90px 100px 100px;
+    background-color: #E1E2E6;
+
+}
+
+.general-servicios-2 {
+    background-image: url(images/Servicios/Electrica/1.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 50%;
+
+
+}
+
+.general-servicios-3 {
+    background-image: url(images/Servicios/Maestranza/1.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 60%;
+
+
+}
+
+.general-servicios h2 {
+    font-size: 45px;
+    line-height: 70px;
+    color: #323237;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+
+.general-servicios p {
+    font-size: 16px;
+    color: #414247;
+    margin: 15px 0 10px 0;
+
+}
+
+
+
+
+
+.bottom-button {
+    display: block;
+    width: 30px;
+    height: 50px;
+    background-color: #3a42a9;
+    color: #fff;
+    border-radius: 25px;
+    text-align: center;
+    line-height: 50px;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-decoration: none;
+}
+
+.bottom-button:hover {
+    background-color: #434bb8;
+}
+
+.bottom-button img {
+    /* Aplica estilos al icono SVG */
+    position: absolute;
+    top: -95%;
+    transform: translateY(-50%);
+    transform: translatex(-50%);
+    width: 60px;
+    height: 45px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.general-producto {
+    display: flex;
+    min-height: 50vh;
+}
+
+.general-producto-1 {
+    width: 60%;
+    padding: 100px 90px 100px 100px;
+    background-color: #E1E2E6;
+    min-height: 50vh;
+}
+
+.general-producto-2 {
+
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 50%;
+    min-height: 50vh;
+
+}
+
+.general-producto-3 {
+    background-image: url(images/Servicios/OleoHidraulica/4.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 60%;
+    min-height: 50vh;
+
+}
+
+.general-producto h2 {
+    font-size: 45px;
+    line-height: 70px;
+    color: #323237;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+
+.general-producto p {
+    font-size: 16px;
+    color: #414247;
+    margin: 15px 0 10px 0;
+
+}
+
+.gallery-product {
+    width: 100%;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 8%;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 30px;
+}
+
+.gallery img {
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+.slider-box {
+    width: auto;
+    height: auto;
+    overflow: hidden;
+    min-height: 50vh;
+
+
+}
+
+.slider-box ul {
+    display: flex;
+    padding: 0;
+    width: 400%;
+    animation: slide 16s linear infinite;
+
+}
+
+.slider-box li {
+    width: 35%;
+    list-style: none;
+    position: relative;
+}
+
+.texto {
+    position: absolute;
+    text-align: center;
+    padding: 0 250px;
+
+    color: #e0e0e0;
+}
+
+.texto h2 {
+    font-size: 45px;
+    margin-bottom: 35px;
+}
+
+.slider-box img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+
+}
+
+
+@keyframes slide {
+    0% {
+        margin-left: 0;
+    }
+
+    12.5% {
+        margin-left: 0;
+    }
+
+    25% {
+        margin-left: -100%;
+    }
+
+    37.5% {
+        margin-left: -100%;
+    }
+
+    50% {
+        margin-left: -200%;
+    }
+
+    62.5% {
+        margin-left: -200%;
+    }
+
+    75% {
+        margin-left: -300%;
+    }
+
+    87.5% {
+        margin-left: -300%;
+    }
+
+    100% {
+        margin-left: 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+.general-inicio {
+    display: flex;
+    min-height: 40vh;
+
+}
+
+.general-inicio-1 {
+    width: 50%;
+    padding: 100px 190px 100px 100px;
+    background-color: #E1E2E6;
+}
+
+.general-inicio-2 {
+    background-image: url(images/SeingSpa/SeingSpa-18.jpeg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 50%;
+
+
+}
+
+.general-inicio-3 {
+    background-image: url(images/Servicios/OleoHidraulica/1.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 50%;
+
+
+}
+
+.general-inicio h2 {
+    font-size: 45px;
+    line-height: 70px;
+    color: #323237;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+
+.general-inicio p {
+    font-size: 16px;
+    color: #414247;
+    margin: 25px 0 45px 0;
+
+}
+
+
+.general-contacto {
+    display: flex;
+}
+
+.general-contacto-1 {
+    width: 50%;
+    padding: 0 0 0 0;
+    background-color: #E1E2E6;
+}
+
+.general-contacto-2 {
+    background-image: url(images/Servicios/Neumatica/1.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 50%;
+
+}
+
+.general-contacto-3 {
+    background-image: url(images/SeingSpa/SeingSpa-1.jpeg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 50%;
+
+}
+
+
+
+
+h2 {
+    font-size: 55px;
+    line-height: 70px;
+    color: #323237;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 16px;
+    color: #414247;
+    margin: 25px 0 45px 0;
+
+}
+
+.blog {
+    padding: 100px 0;
+    text-align: center;
+}
+
+.blog-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.blog-1 {
+    padding: 15px 55px;
+}
+
+.blog-1 img {
+    width: 250px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+.blog-1 h3 {
+    font-size: 25px;
+    color: #323237;
+}
+
+
+
+
+
+
+
+
+.serviciop {
+    padding: 100px 0;
+    text-align: center;
+    min-height: 100vh;
+
+}
+
+.serviciop-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 80px;
+    margin: 15px 120px 0px;
+
+}
+
+.serviciop-1 {
+    padding: 15px 25px;
+}
+
+.serviciop-1 img {
+    width: 250px;
+    height: 300px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.general-ubicacion-1 img {
+    width: 600px;
+    height: 420px;
+    border-radius: 15px;
+}
+
+.general-ubicacion-1 h3 {
+    font-size: 25px;
+    line-height: 30px;
+    color: #323237;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+
+    text-align: center;
+}
+
+
+.general-ubicacion-1 p {
+    font-size: 20px;
+    color: #414247;
+    text-align: center;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.serviciop-1 h3 {
+    font-size: 25px;
+    color: #323237;
+}
+
+.serviciop h2 {
+    color: #323237;
+}
+
+
+
+
+
+.equipo {
+    padding: 100px 0;
+    text-align: center;
+    min-height: 100vh;
+
+}
+
+.equipo-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 75px;
+    margin: 0px 120px 0px;
+
+
+}
+
+.equipo-1 {
+    padding: 15px 25px;
+}
+
+.equipo-1 img {
+    width: 300px;
+    height: 220px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+.equipo-1 h3 {
+    font-size: 16px;
+    color: #323237;
+}
+
+.equipo h2 {
+    color: #323237;
+    margin-bottom: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.empresa {
+    display: flex;
+    min-height: 50vh;
+}
+
+.empresa-1 {
+    width: 50%;
+    padding: 100px 190px 100px 100px;
+    background-color: #E1E2E6;
+}
+
+.empresa-2 {
+    background-image: url(images/SeingSpa/SeingSpa-18.jpeg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 50%;
+
+}
+
+.empresa-3 {
+    background-image: url(images/SeingSpa/SeingSpa-19.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 50%;
+
+}
+
+.empresa h2 {
+    font-size: 55px;
+    line-height: 70px;
+    color: #323237;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+
+.empresa p {
+    font-size: 16px;
+    color: #414247;
+    margin: 25px 0 45px 0;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.footer {
+    padding: 15px 0;
+    /* Ajusta los valores de padding según tus necesidades */
+    background-color: #434bb8;
+
+
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 25px;
+    margin-bottom: 0px;
+}
+
+.copyright {
+    background-color: #434bb8;
+    text-align: center;
+    padding: 5px 0;
+    /* Ajusta el valor de padding para reducir el espacio horizontal */
+
+    /* Ajusta el valor de margin para reducir el espacio superior e inferior */
+}
+
+.copyright p {
+    color: #F9FAFC;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+
+.link h3 {
+    font-size: 18px;
+    color: #F9FAFC;
+    margin-bottom: 15px;
+}
+
+.link a {
+    font-size: 16px;
+    color: #C5C5C5;
+    display: block;
+    margin-bottom: 15px;
+
+}
+
+
+
+.et_pb_contact_form {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para campos de entrada */
+.et_pb_contact_field {
+    margin-bottom: 15px;
+}
+
+/* Estilo para etiquetas */
+.et_pb_contact_form_label {
+    display: block;
+    font-weight: bold;
+}
+
+/* Estilo para botón de envío */
+.et_pb_contact_submit {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.et_pb_contact_submit:hover {
+    background-color: #0056b3;
+}
+
+@media(max-width:991px) {
+    .menu {
+        padding: 30px;
+    }
+
+    .menu label {
+        display: initial;
+    }
+
+    .menu .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #E1E2E6;
+        display: none;
+    }
+
+    .menu .navbar ul li {
+        width: 100%;
+    }
+
+    .menu .navbar a:hover {
+        background: #434bb8;
+        color: #E1E2E6;
+        transition: all 0.5s ease;
+        border-radius: 1px;
+
+    }
+
+    .menu .navbar a.selected {
+        background: #434bb8;
+        color: #E1E2E6;
+        border-radius: 1px;
+        transition: all 0.5s ease;
+
+    }
+
+
+    #menu:checked~.navbar {
+        display: initial;
+    }
+
+    .header {
+        min-height: 0vh;
+    }
+
+    .header-content {
+        padding: 100px 30px;
+    }
+
+    .header-content .scroll-button {
+        display: none;
+    }
+
+    .header-content p {
+        padding: 0;
+    }
+
+    .coffee {
+        padding: 30px;
+    }
+
+    .coffee-content h2 {
+        padding: 0;
+    }
+
+    .coffee-group {
+        flex-direction: column;
+        margin-bottom: 0;
+    }
+
+    .coffee-img {
+        display: none;
+    }
+
+    .contacto-formulario {
+        max-width: 900%;
+        padding: 10px;
+    }
+
+    .contacto-formulario input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea {
+        padding: 10px;
+    }
+
+    .contacto-formulario input[type="submit"] {
+        padding: 8px 12px;
+    }
+
+
+
+
+
+
+
+
+
+    .ServiciosInicio {
+        padding: 30px;
+        background-color: #3c3c8c;
+    }
+
+    .ServiciosInicio-content h2 {
+        padding: 0;
+    }
+
+    .ServiciosInicio-1 p {
+        padding: 0;
+    }
+
+    .ServiciosInicio-group {
+        flex-direction: column;
+        margin-bottom: 0;
+    }
+
+    .ServiciosInicio-1 img {
+        height: 100px;
+        width: 100px;
+        padding-top: 35px;
+    }
+
+
+
+
+
+    .ContactoInicio {
+        padding: 30px;
+        background-color: #E1E2E6;
+    }
+
+    .ContactoInicio-content h2 {
+        padding: 0;
+    }
+
+    .ContactoInicio-1 p {
+        padding: 0;
+    }
+
+    .ContactoInicio-group {
+        flex-direction: column;
+        margin-bottom: 0;
+    }
+
+    .ContactoInicio-1 img {
+        height: 100px;
+        width: 100px;
+        padding-top: 35px;
+    }
+
+
+
+
+    .ServiciosPrincipal {
+        display: flex;
+        flex-direction: column;
+        /* Cambia la dirección de flex a columna en dispositivos móviles */
+    }
+
+    .ServiciosPrincipal h2 {
+        font-size: 45px;
+    }
+
+    .ServiciosPrincipal-1,
+    .ServiciosPrincipal-2,
+    .ServiciosPrincipal-3 {
+        width: 100%;
+        /* Asegura que los elementos ocupen todo el ancho en dispositivos móviles */
+        padding: 30px;
+        /* Ajusta el espaciado según tus necesidades */
+        text-align: center;
+        position: relative;
+        padding-bottom: 50px;
+    }
+
+    .ServiciosPrincipal-2::before,
+    .ServiciosPrincipal-3::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        /* Coloca la superposición sobre la imagen de fondo */
+    }
+
+    .ServiciosPrincipal-1 h2,
+    .ServiciosPrincipal-2 h2,
+    .ServiciosPrincipal-3 h2,
+    .ServiciosPrincipal-1 p,
+    .ServiciosPrincipal-2 p,
+    .ServiciosPrincipal-3 p {
+        position: relative;
+        /* Permite un contexto de apilamiento superior que la superposición */
+        z-index: 2;
+        /* Coloca el texto por encima de la superposición */
+
+    }
+
+    .ServiciosPrincipal-2,
+    .ServiciosPrincipal-3 {
+        display: block;
+        /* Asegura que las imágenes de fondo se muestren en dispositivos con un ancho ≤ 991px */
+        background-size: cover;
+        width: 100%;
+        height: 300px;
+        padding: 20px;
+    }
+
+    .ServiciosPrincipal-2 {
+        order: -1;
+        /* Cambia el orden para que ServiciosPrincipal2-2 aparezca primero */
+    }
+
+
+
+
+
+
+
+
+
+
+
+    .ServiciosPrincipal2 {
+        display: flex;
+        flex-direction: column;
+        /* Cambia la dirección de flex a columna en dispositivos móviles */
+    }
+
+    .ServiciosPrincipal2 h2 {
+        font-size: 45px;
+    }
+
+    .ServiciosPrincipal2-1,
+    .ServiciosPrincipal2-2,
+    .ServiciosPrincipal2-3 {
+        width: 100%;
+        /* Asegura que los elementos ocupen todo el ancho en dispositivos móviles */
+        padding: 30px;
+        /* Ajusta el espaciado según tus necesidades */
+        text-align: center;
+        position: relative;
+        padding-bottom: 50px;
+
+    }
+
+    .ServiciosPrincipal2-2::before,
+    .ServiciosPrincipal2-3::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        /* Coloca la superposición sobre la imagen de fondo */
+    }
+
+    .ServiciosPrincipal2-1 h2,
+    .ServiciosPrincipal2-2 h2,
+    .ServiciosPrincipal2-3 h2,
+    .ServiciosPrincipal2-1 p,
+    .ServiciosPrincipal2-2 p,
+    .ServiciosPrincipal2-3 p {
+        position: relative;
+        /* Permite un contexto de apilamiento superior que la superposición */
+        z-index: 2;
+        /* Coloca el texto por encima de la superposición */
+
+    }
+
+    .ServiciosPrincipal2-2,
+    .ServiciosPrincipal2-3 {
+        display: block;
+        /* Asegura que las imágenes de fondo se muestren en dispositivos con un ancho ≤ 991px */
+        background-size: cover;
+        width: 100%;
+        height: 300px;
+        padding: 20px;
+    }
+
+    .ServiciosPrincipal2-2 {
+        order: -1;
+        /* Cambia el orden para que ServiciosPrincipal2-2 aparezca primero */
+    }
+
+
+
+
+
+
+    .ContactoInfo {
+        display: flex;
+        flex-direction: column;
+        /* Cambia la dirección de flex a columna en dispositivos móviles */
+    }
+
+    .ContactoInfo h2 {
+        font-size: 40px;
+    }
+
+    .ContactoInfo h3 {
+        font-size: 30px;
+    }
+
+    .ContactoInfo p {
+        font-size: 25px;
+    }
+
+
+    .ContactoInfo-1,
+    .ContactoInfo-2 {
+        width: 100%;
+        /* Asegura que los elementos ocupen todo el ancho en dispositivos móviles */
+        padding: 30px;
+        /* Ajusta el espaciado según tus necesidades */
+
+        position: relative;
+        padding-bottom: 50px;
+    }
+
+    .ContactoInfo-2::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        /* Coloca la superposición sobre la imagen de fondo */
+    }
+
+    .ContactoInfo-1 h2,
+    .ContactoInfo-2 h2,
+    .ContactoInfo-1 p,
+    .ContactoInfo-2 p {
+        position: relative;
+        /* Permite un contexto de apilamiento superior que la superposición */
+        z-index: 2;
+        /* Coloca el texto por encima de la superposición */
+
+    }
+
+    .ContactoInfo-2 {
+        display: block;
+        /* Asegura que las imágenes de fondo se muestren en dispositivos con un ancho ≤ 991px */
+        background-size: cover;
+        width: 100%;
+        height: 300px;
+        padding: 20px;
+    }
+
+    .ContactoInfo-2 {
+        order: -1;
+        /* Cambia el orden para que ServiciosPrincipal2-2 aparezca primero */
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    .galeria {
+        padding: 10px;
+    }
+
+    .galeria-content h2 {
+        padding: 15px;
+    }
+
+    .galeria-group {
+        flex-direction: column;
+        margin-bottom: 0;
+    }
+
+    .galeria-img {
+        display: none;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    .principal-content {
+        padding: 20px 0;
+        /* Ajustamos el espacio en la parte superior e inferior */
+    }
+
+    .principal-1 {
+        padding: 10px 0;
+        /* Ajustamos el espacio en los elementos principal-1 */
+    }
+
+
+
+
+
+    .gallery-product {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        flex-direction: column;
+        margin-bottom: 0;
+    }
+
+    .gallery a {
+        flex: 1;
+        margin: 10px;
+    }
+
+    .gallery img {
+        max-width: 100%;
+        height: auto;
+    }
+
+
+
+    .general-inicio {
+        flex-direction: column;
+    }
+
+    .general-inicio-1 {
+        width: 100%;
+        padding: 30px;
+        text-align: center;
+    }
+
+    .general-inicio-2,
+    .general-inicio-3 {
+        display: none;
+    }
+
+    .principal-group {
+        flex-direction: column;
+
+    }
+
+    .principal-img {
+        display: none;
+
+    }
+
+    .principal-1 img {
+        margin-top: 35px;
+    }
+
+
+
+
+
+    .services {
+        padding: 30px;
+    }
+
+    .services-content p {
+        padding: 0;
+    }
+
+    .services-group {
+        flex-direction: column;
+        margin-bottom: 0;
+    }
+
+    .services-1 {
+        margin-bottom: 25px;
+    }
+
+    .general {
+        flex-direction: column;
+    }
+
+    .general-1 {
+        width: 100%;
+        padding: 30px;
+        text-align: center;
+    }
+
+    .general-2,
+    .general-3 {
+        display: none;
+    }
+
+    .general-contacto {
+        flex-direction: column;
+    }
+
+    .general-contacto-1 {
+        width: 100%;
+        text-align: center;
+    }
+
+    .general-contacto-2,
+    .general-contacto-3 {
+        display: none;
+    }
+
+    .general-inicio {
+        flex-direction: column;
+    }
+
+    .general-inicio-1 {
+        width: 100%;
+        padding: 30px;
+        text-align: center;
+    }
+
+    .general-inicio-2,
+    .general-inicio-3 {
+        display: none;
+    }
+
+
+
+
+
+
+
+    .empresa {
+        flex-direction: column;
+    }
+
+    .empresa-1 {
+        width: 100%;
+        padding: 30px;
+        text-align: center;
+    }
+
+    .empresa-2,
+    .empresa-3 {
+        display: none;
+    }
+
+
+
+
+    .general-servicio {
+        flex-direction: column;
+    }
+
+    .general-servicio-1 {
+        width: 100%;
+        padding: 30px;
+        text-align: center;
+    }
+
+    .general-servicio-2,
+    .general-servicio-3 {
+        display: none;
+    }
+
+
+
+    .general-servicios {
+        flex-direction: column;
+    }
+
+    .general-servicios-1 {
+        width: 100%;
+        padding: 30px;
+        text-align: center;
+    }
+
+    .general-servicios-2,
+    .general-servicios-3 {
+        display: none;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    .general-producto {
+        flex-direction: column;
+
+    }
+
+    .general-producto-1 {
+        width: 100%;
+        padding: 25px 50px 25px 50px;
+        text-align: center;
+
+    }
+
+    .general-producto-2,
+    .general-producto-3 {
+        display: none;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+    .EquipoEmpresa {
+        padding: 30px;
+    }
+
+    .EquipoEmpresa-content {
+        flex-direction: column;
+    }
+
+    .EquipoEmpresa-1 {
+        padding: 0;
+        padding-bottom: 5px;
+        margin-bottom: 45px;
+    }
+
+    .EquipoEmpresa-1 h3,
+    .EquipoEmpresa-1 p {
+        margin: 0;
+        /* Establece el margen en 0 para eliminar el espacio en la parte superior e inferior */
+    }
+
+    .EquipoEmpresa-1 h2 {
+        margin-bottom: 45px;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    .serviciop-content {
+        display: flex;
+        flex-direction: column;
+        /* Cambiamos a dirección de columna */
+        align-items: center;
+        /* Centramos los elementos verticalmente */
+    }
+
+    .serviciop-1 {
+        text-align: center;
+        /* Centramos el contenido */
+        margin-bottom: 20px;
+        /* Agregamos margen inferior para separar los elementos */
+    }
+
+
+
+    .btn-1 {
+        margin-top: 20px;
+        /* Agregamos margen superior al botón para separarlo */
+    }
+
+
+
+
+
+    .equipo-content {
+        display: flex;
+        flex-direction: column;
+        /* Cambiamos a dirección de columna */
+        align-items: center;
+        /* Centramos los elementos verticalmente */
+    }
+
+    .equipo-1 {
+        text-align: center;
+        /* Centramos el contenido */
+        margin-bottom: 20px;
+        /* Agregamos margen inferior para separar los elementos */
+    }
+
+    .equipo-1 img {
+        width: 350px;
+        /* Hacemos que las imágenes sean responsivas y no excedan su contenedor */
+        height: 300px;
+    }
+
+    .equipo-1 h2 {
+        padding: 30px;
+    }
+
+    .general-ubicacion {
+        text-align: center;
+        /* Centra todo el contenido horizontalmente */
+    }
+
+    .general-ubicacion-1,
+    .general-ubicacion-2 {
+        width: 100%;
+        /* Asegura que ambos elementos ocupen el ancho completo */
+        margin-bottom: 20px;
+        /* Agrega margen inferior entre ellos */
+    }
+
+    .general-ubicacion-1 h2 {
+        margin-top: 0;
+        /* Elimina el margen superior del encabezado */
+    }
+
+    .general-ubicacion-2 img {
+        max-width: 50%;
+        /* Cambia el tamaño de la imagen al 50% del ancho del contenedor */
+        display: block;
+        /* Elimina cualquier margen adicional alrededor de la imagen */
+        margin: 0 auto;
+        /* Centra horizontalmente la imagen */
+    }
+
+    .general-ubicacion-3 {
+        width: 100%;
+    }
+
+    .general-ubicacion-3 iframe {
+        width: 100%;
+        height: 300px;
+        /* Ajusta la altura del mapa para dispositivos pequeños */
+        margin: 0 auto;
+        /* Centra horizontalmente el mapa */
+    }
+
+    .general-ubicacion-1 img {
+        height: 250px;
+        width: 450px;
+        margin: 15px 0;
+    }
+
+
+
+
+
+    .contactop-group {
+        display: flex;
+        flex-direction: column;
+        /* Cambiamos a dirección de columna */
+        align-items: center;
+        /* Centramos los elementos verticalmente */
+
+    }
+
+    .contactop-1 {
+        text-align: center;
+        /* Centramos el contenido */
+        margin-bottom: 20px;
+        /* Agregamos margen inferior para separar los elementos */
+
+    }
+
+    .contactop-1 p {
+        padding: 20px;
+    }
+
+    .btn-1 {
+        margin-top: 20px;
+        /* Agregamos margen superior al botón para separarlo */
+    }
+
+
+
+
+
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .footer-content h3 {
+        font-size: 25px;
+    }
+
+    .footer-content .link a {
+        font-size: 20px;
+    }
+
+
+
+}

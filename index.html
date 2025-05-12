@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEING SPA - Soluciones Hidráulicas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <link rel="preload" href="images/SeingSpa/logo.png" as="image">
+    <link rel="preload" href="video1.mp4" as="video">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="bg-gray-50 font-sans antialiased">
+    <div class="noise"></div>
+    <div id="main-content">
+        <!-- Navbar -->
+        <div id="navbar-container"></div>
+
+        <!-- Hero Section -->
+        <main class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+            <div class="hero-pattern absolute inset-0"></div>
+            <div class="container mx-auto px-4 relative z-10">
+                <div id="hero-logo" class="mb-6 flex justify-start transition-opacity duration-500 opacity-100">
+                    <img src="images/Logo/logo.png" alt="SEING SPA Logo" class="h-28 w-auto" loading="eager">
+                </div>
+                <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+                    <!-- Texto -->
+                    <div class="w-full lg:w-1/2" data-aos="fade-right">
+                        <h1 class="text-5xl lg:text-7xl font-bold mb-6">
+                            <span class="gradient-text">POTENCIA</span><br>
+                            <span class="text-blue-900">& PRECISIÓN</span>
+                        </h1>
+                        <p class="text-xl lg:text-2xl text-blue-600 font-semibold mb-8 animated-border inline-block">
+                            INGENIERÍA ÓLEO HIDRÁULICA
+                        </p>
+                        <p class="text-lg text-gray-700 mb-10 max-w-2xl">
+                            Más de <span class="text-blue-600 font-bold">10 años</span> entregando soluciones de alta precisión en ingeniería óleo-hidráulica, neumática y eléctrica para el sector industrial, energético y marítimo.
+                        </p>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="#contacto" class="bg-blue-900 text-white px-8 py-4 rounded-full hover:bg-blue-800 transition-all duration-300 transform hover:scale-105 flex items-center gap-2">
+                                <span>CONTÁCTANOS</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                            <a href="#servicios" class="border-2 border-blue-900 text-blue-900 px-8 py-4 rounded-full hover:bg-blue-900 hover:text-white transition-all duration-300 flex items-center gap-2">
+                                <span>VER SERVICIOS</span>
+                                <i class="fas fa-cog"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Video -->
+                    <div class="w-full lg:w-2/3 relative" data-aos="fade-left">
+                        <div class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-blue-900 transform scale-100">
+                            <div class="absolute inset-0 bg-gradient-to-r from-blue-900/20 to-transparent z-10"></div>
+                            <video
+                                id="hero-video"
+                                class="w-full h-[500px] object-cover"
+                                playsinline
+                                muted
+                                preload="auto"
+                                poster="images/video-poster.jpg"
+                            >
+                                <source src="video1.mp4" type="video/mp4">
+                                Tu navegador no soporta la etiqueta de video.
+                            </video>
+                            <!-- Controles -->
+                            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 opacity-0 transition-opacity duration-300 hover:opacity-100 z-20">
+                                <div class="flex items-center justify-between">
+                                    <!-- Espacio vacío a la izquierda para centrar el botón de play -->
+                                    <div class="w-1/3"></div>
+                                    
+                                    <!-- Botón de play/pause centrado -->
+                                    <div class="flex justify-center w-1/3">
+                                        <button id="play-pause-btn" class="text-white hover:text-blue-400 transition-colors text-2xl">
+                                            <i class="fas fa-play"></i>
+                                        </button>
+                                    </div>
+
+                                    <!-- Controles de volumen y pantalla completa a la derecha -->
+                                    <div class="flex items-center gap-4 w-1/3 justify-end">
+                                        <div class="relative group">
+                                            <button id="mute-btn" class="text-white hover:text-blue-400 transition-colors">
+                                                <i class="fas fa-volume-mute"></i>
+                                            </button>
+                                            <div class="absolute bottom-full right-0 mb-2 bg-black/80 rounded-lg p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                                <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="1" 
+                                                    class="w-24 h-1 bg-gray-600 rounded-lg appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-3 [&::-webkit-slider-thumb]:h-3 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-white">
+                                            </div>
+                                        </div>
+                                        <button id="fullscreen-btn" class="text-white hover:text-blue-400 transition-colors">
+                                            <i class="fas fa-expand"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scroll -->
+            <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+                <i class="fas fa-chevron-down text-blue-900 text-2xl"></i>
+            </div>
+        </main>
+
+        <!-- Secciones -->
+        <div id="empresa-container"></div>
+        <div id="cta-superior"></div>
+        <div id="servicios-container"></div>
+        <div id="productos-container"></div>
+        <div id="galeria-container"></div>
+        <div id="cta-inferior"></div>
+    </div>
+    <div id="footer-container"></div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const video = document.getElementById('hero-video');
+            const playPauseBtn = document.getElementById('play-pause-btn');
+            const muteBtn = document.getElementById('mute-btn');
+            const fullscreenBtn = document.getElementById('fullscreen-btn');
+            const volumeSlider = document.getElementById('volume-slider');
+
+            // Asegurar reproducción inicial sin bloqueo
+            video.muted = true;
+            video.play().catch(() => {
+                console.warn("El navegador bloqueó la reproducción automática.");
+            });
+
+            playPauseBtn.addEventListener('click', () => {
+                if (video.paused) {
+                    video.play();
+                } else {
+                    video.pause();
+                }
+            });
+
+            video.addEventListener('play', () => {
+                playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+            });
+
+            video.addEventListener('pause', () => {
+                playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+            });
+
+            // Control de volumen
+            volumeSlider.addEventListener('input', (e) => {
+                const volume = e.target.value;
+                video.volume = volume;
+                video.muted = volume === '0';
+                updateVolumeIcon(volume);
+            });
+
+            muteBtn.addEventListener('click', () => {
+                video.muted = !video.muted;
+                if (video.muted) {
+                    volumeSlider.value = 0;
+                } else {
+                    volumeSlider.value = video.volume || 1;
+                }
+                updateVolumeIcon(volumeSlider.value);
+            });
+
+            function updateVolumeIcon(volume) {
+                if (volume === '0' || video.muted) {
+                    muteBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
+                } else if (volume < 0.5) {
+                    muteBtn.innerHTML = '<i class="fas fa-volume-down"></i>';
+                } else {
+                    muteBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
+                }
+            }
+
+            // Función para pantalla completa
+            fullscreenBtn.addEventListener('click', () => {
+                if (!document.fullscreenElement) {
+                    video.requestFullscreen().catch(err => {
+                        console.log(`Error al intentar entrar en pantalla completa: ${err.message}`);
+                    });
+                    fullscreenBtn.innerHTML = '<i class="fas fa-compress"></i>';
+                } else {
+                    document.exitFullscreen();
+                    fullscreenBtn.innerHTML = '<i class="fas fa-expand"></i>';
+                }
+            });
+
+            // Actualizar icono cuando cambie el estado de pantalla completa
+            document.addEventListener('fullscreenchange', () => {
+                if (document.fullscreenElement) {
+                    fullscreenBtn.innerHTML = '<i class="fas fa-compress"></i>';
+                } else {
+                    fullscreenBtn.innerHTML = '<i class="fas fa-expand"></i>';
+                }
+            });
+        });
+
+        $("#cta-superior").load("components/Contacto.html");
+        $("#cta-inferior").load("components/Contacto.html");
+
+        // Mostrar/ocultar botón flotante según scroll
+        const btnTop = document.getElementById('btn-top');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                btnTop.style.display = 'flex';
+            } else {
+                btnTop.style.display = 'none';
+            }
+        });
+        // Ocultar por defecto
+        btnTop.style.display = 'none';
+
+        // Scroll suave al hacer clic
+        btnTop.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+
+</html>
+    

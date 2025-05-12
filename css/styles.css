@@ -1,0 +1,466 @@
+:root {
+    --primary: #1e3a8a;
+    --primary-light: #3b82f6;
+    --secondary: #0f172a;
+    --light: #f8fafc;
+    --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--light);
+    position: relative;
+    overflow-x: hidden;
+}
+
+.noise {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.title-font {
+    font-family: 'Orbitron', sans-serif;
+}
+
+h1, h2, h3 {
+    font-family: 'Orbitron', sans-serif;
+}
+
+.gradient-text {
+    background: linear-gradient(45deg, var(--primary), var(--primary-light));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-pattern {
+    background-image: radial-gradient(var(--primary-light) 1px, transparent 1px);
+    background-size: 40px 40px;
+    background-color: var(--light);
+    opacity: 0.1;
+}
+
+.animated-border {
+    position: relative;
+    overflow: hidden;
+}
+
+.animated-border::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--primary-light));
+    animation: borderSlide 3s infinite;
+}
+
+@keyframes borderSlide {
+    100% { left: 100%; }
+}
+
+.card-hover {
+    transition: var(--transition);
+}
+
+.card-hover:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+#navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid var(--primary);
+    z-index: 50;
+    transition: var(--transition);
+    margin: 0;
+    padding: 0.25rem 2rem;
+}
+
+.service-card, .product-card {
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.service-card:hover, .product-card:hover {
+    transform: translateY(-10px);
+}
+
+.service-icon {
+    transition: var(--transition);
+}
+
+.service-card:hover .service-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.button-hover {
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.button-hover:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: var(--transition);
+    z-index: -1;
+}
+
+.button-hover:hover:before {
+    left: 100%;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: var(--primary);
+    color: white;
+    padding: 4rem 0 2rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.footer .link h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.footer .link h3:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background-color: var(--primary-light);
+}
+
+.footer .link ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer .link ul li {
+    margin-bottom: 0.8rem;
+}
+
+.footer .link ul li a {
+    color: #e2e8f0;
+    text-decoration: none;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+}
+
+.footer .link ul li a:hover {
+    color: white;
+    transform: translateX(5px);
+}
+
+.footer .link ul li a i {
+    margin-right: 8px;
+}
+
+.copyright {
+    background-color: var(--secondary);
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.875rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem !important;
+    }
+    
+    h2 {
+        font-size: 2rem !important;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Product gallery */
+.product-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.product-card img {
+    transition: var(--transition);
+}
+
+.product-card:hover img {
+    transform: scale(1.05);
+}
+
+/* Custom animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fadeInUp {
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+
+/* Mejoras responsivas */
+@media (max-width: 640px) {
+    .hero-section {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+    
+    .video-container {
+        margin-top: 2rem;
+    }
+    
+    .service-card, .product-card {
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+/* Optimización de imágenes */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Mejora de rendimiento de video */
+video {
+    will-change: transform;
+    backface-visibility: hidden;
+}
+
+/* Agregar al CSS existente */
+@media (max-width: 640px) {
+    .title-font {
+        font-size: clamp(1.5rem, 5vw, 2.5rem);
+    }
+    
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    .grid {
+        gap: 1rem;
+    }
+    
+    .product-card, .service-card {
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* Mejoras en la animación para dispositivos con preferencia de movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+    .animate-fadeInUp,
+    .animate-bounce,
+    .animate-slow-spin {
+        animation: none !important;
+        transform: none !important;
+    }
+}
+
+/* Optimización de carga de fuentes */
+@font-face {
+    font-family: 'Orbitron';
+    font-display: swap;
+    src: url('fonts/Orbitron-Regular.woff2') format('woff2');
+}
+
+/* Estilos base consistentes */
+.section-title {
+    @apply title-font text-4xl md:text-5xl text-blue-900 font-bold mb-6;
+}
+
+.section-subtitle {
+    @apply text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed;
+}
+
+.section-badge {
+    @apply inline-block px-4 py-2 bg-blue-100 text-blue-900 rounded-full text-sm font-semibold mb-4;
+}
+
+.card-base {
+    @apply bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-2;
+}
+
+.button-primary {
+    @apply bg-blue-900 text-white px-8 py-4 rounded-full hover:bg-blue-800 transition-all duration-300 transform hover:scale-105 flex items-center gap-2;
+}
+
+.button-secondary {
+    @apply border-2 border-blue-900 text-blue-900 px-8 py-4 rounded-full hover:bg-blue-900 hover:text-white transition-all duration-300 flex items-center gap-2;
+}
+
+/* Ajustes de sección */
+section {
+    @apply py-16 md:py-20 relative overflow-hidden;
+}
+
+/* Ajustes de contenedor */
+.container {
+    @apply mx-auto px-4 max-w-7xl relative;
+}
+
+/* Ajustes de galería */
+.gallery-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8;
+}
+
+.gallery-item {
+    @apply relative overflow-hidden rounded-2xl shadow-lg transition-all duration-500 hover:shadow-2xl hover:-translate-y-2;
+}
+
+/* Ajustes de animaciones */
+.animate-fadeInUp {
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Ajustes de footer */
+.footer {
+    @apply bg-blue-900 text-white py-16;
+}
+
+.footer-content {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto px-4;
+}
+
+.footer-title {
+    @apply text-xl font-bold mb-6 relative pb-2;
+}
+
+.footer-title::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-12 h-0.5 bg-blue-400;
+}
+
+.footer-link {
+    @apply text-gray-300 hover:text-white transition-colors duration-300 flex items-center gap-2;
+}
+
+/* Ajustes de navegación */
+.nav-link {
+    @apply relative text-blue-900 font-medium hover:text-blue-600 transition-colors duration-300;
+}
+
+.nav-link::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300;
+}
+
+.nav-link:hover::after {
+    @apply w-full;
+}
+
+/* Ajustes de tarjetas de servicio */
+.service-card {
+    @apply card-base;
+}
+
+.service-card-image {
+    @apply relative h-64 overflow-hidden;
+}
+
+.service-card-content {
+    @apply p-6;
+}
+
+/* Ajustes de tarjetas de producto */
+.product-card {
+    @apply card-base;
+}
+
+.product-card-image {
+    @apply relative h-56 overflow-hidden;
+}
+
+.product-card-content {
+    @apply p-6;
+}
+
+/* Ajustes de CTA */
+.cta-section {
+    @apply bg-blue-900 text-white py-16;
+}
+
+.cta-content {
+    @apply max-w-5xl mx-auto px-4;
+}
+
+/* Ajustes de botón flotante */
+.floating-button {
+    @apply fixed bottom-6 right-6 w-12 h-12 bg-blue-900 rounded-full flex items-center justify-center text-white shadow-lg hover:bg-blue-700 hover:scale-110 transition-all duration-300 z-50;
+} 
